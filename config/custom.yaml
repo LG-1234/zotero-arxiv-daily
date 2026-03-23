@@ -13,9 +13,9 @@ email:
 llm:
   api:
     key: ${oc.env:OPENAI_API_KEY}
-    base_url: ${oc.env:OPENAI_API_BASE,https://api.openai.com/v1}
+    base_url: ${oc.env:OPENAI_API_BASE,https://openrouter.ai/api/v1}
   generation_kwargs:
-    model: gpt-4o-mini
+    model: anthropic/claude-sonnet-4.6
   language: Chinese
 
 source:
