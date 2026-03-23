@@ -97,7 +97,7 @@ def send_email(config:DictConfig, html:str):
     receiver = config.email.receiver
     password = config.email.sender_password
     smtp_server = config.email.smtp_server
-    smtp_port = config.email.smtp_port
+    smtp_port = int(config.email.smtp_port)
     def _format_addr(s):
         name, addr = parseaddr(s)
         return formataddr((Header(name, 'utf-8').encode(), addr))

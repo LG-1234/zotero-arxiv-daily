@@ -11,8 +11,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          repository: ${{ vars.REPOSITORY }}
-          ref: ${{ vars.REF }}
+          repository: ${{ vars.REPOSITORY != '' && vars.REPOSITORY || github.repository }}
+          ref: ${{ vars.REF != '' && vars.REF || github.ref_name }}
 
       - name: Setup uv
         uses: astral-sh/setup-uv@v7
@@ -23,6 +23,8 @@ jobs:
           ZOTERO_KEY: ${{ secrets.ZOTERO_KEY }}
           SENDER: ${{ secrets.SENDER }}
           RECEIVER: ${{ secrets.RECEIVER }}
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
