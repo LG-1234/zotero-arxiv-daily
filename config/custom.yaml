@@ -16,6 +16,7 @@ llm:
     base_url: ${oc.env:OPENAI_API_BASE,https://openrouter.ai/api/v1}
   generation_kwargs:
     model: anthropic/claude-sonnet-4.6
+    max_tokens: 2048
   language: Chinese
 
 source:
