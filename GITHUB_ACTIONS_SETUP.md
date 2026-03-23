@@ -32,10 +32,11 @@ Add these in:
 - `OPENAI_API_KEY`
 - `OPENAI_API_BASE`
 
-For OpenRouter + Claude:
+For OpenRouter free models:
 
 - `OPENAI_API_BASE`: `https://openrouter.ai/api/v1`
 - `OPENAI_API_KEY`: your OpenRouter API key
+- model: `openrouter/free`
 
 ## Repository variables to add
 
